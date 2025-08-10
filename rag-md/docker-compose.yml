@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: rag-md-qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+
+  # vllm:
+  #   image: vllm/vllm-openai:latest
+  #   container_name: rag-md-vllm
+  #   # vLLM typically requires GPU. Uncomment and adjust if you have CUDA.
+  #   # deploy:
+  #   #   resources:
+  #   #     reservations:
+  #   #       devices:
+  #   #         - capabilities: [gpu]
+  #   environment:
+  #     - VLLM_WORKER_USE_MMPLUGINS=false
+  #   command: ["--model", "mistralai/Mistral-7B-Instruct-v0.2", "--max-model-len", "8192"]
+  #   ports:
+  #     - "8000:8000"
+  #   volumes:
+  #     - ~/.cache/huggingface:/root/.cache/huggingface
+
+volumes:
+  qdrant_storage: 

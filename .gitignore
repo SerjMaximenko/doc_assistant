@@ -1,0 +1,78 @@
+# Root .gitignore for unified repo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+.vs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+venv/
+.venv/
+env/
+.env/
+.env.*
+.coverage*
+coverage.xml
+dist/
+build/
+*.egg-info/
+
+# Node (just in case)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# C/C++ & CMake
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+compile_commands.json
+Makefile
+makefile
+build*/
+out/
+bin/
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+*.lib
+*.exp
+*.pdb
+*.exe
+*.out
+*.app
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+**/.cache/
+
+# Models (large files stay local)
+models/**
+!models/.gitkeep
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
